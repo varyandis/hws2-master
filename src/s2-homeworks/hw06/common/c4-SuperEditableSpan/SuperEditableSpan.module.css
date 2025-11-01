@@ -1,10 +1,18 @@
 .spanBlock {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 22px;
+  max-width: 276;
 }
 
 .span {
 }
 
 .input {
+  margin-bottom: 22px;
+  max-width: 276px;
+  height: 36px; 
+  padding: 8px 24px;
 }
 
 .pen {
