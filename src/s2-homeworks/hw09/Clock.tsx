@@ -11,7 +11,9 @@ function Clock() {
   const [show, setShow] = useState<boolean>(false);
 
   const start = () => {
-    const localTimerId = setInterval(() => setDate(new Date(Date.now())), 1000);
+    const localTimerId = setInterval(() => {
+      setDate((prevDate) => new Date(prevDate.getTime() + 1000));
+    }, 1000);
     setTimerId(Number(localTimerId));
   };
 
@@ -30,21 +32,18 @@ function Clock() {
   const hours = date.getHours() < 10 ? `0${date.getHours()}` : date.getHours();
   const minutes =
     date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
-  const seconds =
-    date.getSeconds() < 10 ? `0${date.getSeconds()}` : date.getSeconds();
-
   const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
   const month =
     date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
   const year = date.getFullYear();
-  const stringTime = `${hours}:${minutes}:${seconds}` || <br />;
-  const stringDate = `${day}.${month}.${year}` || <br />; 
+  const stringTime = `${hours}:${minutes}` || <br />;
+  const stringDate = `${day}.${month}.${year}` || <br />;
   const stringDay = `${date.toLocaleString("en-US", { weekday: "long" })}` || (
     <br />
-  ); 
+  );
   const stringMonth = `${date.toLocaleString("en-US", {
     month: "long",
-  })}` || <br />; 
+  })}` || <br />;
 
   return (
     <div className={s.clock}>
