@@ -39,6 +39,9 @@ function Clock() {
     date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
   const year = date.getFullYear();
   const stringTime = `${hours}:${minutes}:${seconds}` || <br />;
+
+
+  
   const stringDate = `${day}.${month}.${year}` || <br />;
   const stringDay = `${date.toLocaleString("en-US", { weekday: "long" })}` || (
     <br />
