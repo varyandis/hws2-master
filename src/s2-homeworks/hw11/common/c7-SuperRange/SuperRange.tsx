@@ -1,18 +1,16 @@
-import React from 'react'
-import {Slider, SliderProps} from '@mui/material'
+import React from "react";
+import { Slider, SliderProps } from "@mui/material";
 
 const SuperRange: React.FC<SliderProps> = (props) => {
-    // debugger
-    return (
-      <Slider
-        sx={
-          {
-            // стили для слайдера // пишет студент
-          }
-        }
-        {...props} // отдаём слайдеру пропсы если они есть (value например там внутри)
-      />
-    );
-}
+  return (
+    <Slider
+      sx={{
+        height: 4,
+        px: 1,
+      }}
+      {...props}
+    />
+  );
+};
 
-export default SuperRange
+export default SuperRange;
