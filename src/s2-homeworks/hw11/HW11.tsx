@@ -12,7 +12,8 @@ function HW11() {
   );
 
   const change = (event: Event, value: number | number[]) => {
-    // если пришёл массив - сохранить значения в оба useState, иначе в первый
+      // если пришёл массив - сохранить значения в оба useState, иначе в первый
+      console.log(value2)
     if (Array.isArray(value)) {
       const [v1, v2] = value;
       setValue1(v1);
@@ -53,6 +54,7 @@ function HW11() {
               onChange={change}
               min={0}
               max={100}
+              disableSwap
             />
 
             <span id={"hw11-value-2"} className={s.number}>
