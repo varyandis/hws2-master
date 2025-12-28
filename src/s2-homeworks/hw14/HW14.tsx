@@ -33,15 +33,15 @@ const HW14 = () => {
   };
 
   const onChangeText = (value: string) => {
-      setFind(value);
-      setSearchParams({find: value})
+    setFind(value);
+    setSearchParams({ find: value });
   };
 
   useEffect(() => {
     const params = Object.fromEntries(searchParams);
     sendQuery(params.find || "");
     setFind(params.find || "");
-  }, [ searchParams ]);
+  }, []);
 
   const mappedTechs = techs.map((t) => (
     <div key={t} id={"hw14-tech-" + t} className={s.tech}>
